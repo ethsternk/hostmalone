@@ -1,19 +1,19 @@
 extends layout
 
 block content
-  h1 New Post
-  p Making a new post malone?
-  form(method='POST', action='/new')
-    #form-group
-      label Type:
-      select(name='type')
-        option(value='post', selected= true) Post
-        option(value='boast') Boast
-        option(value='roast') Roast
-    #form-group
-      label Author:
-      input.form-control(name='author', type='text', value='Anonymous')
-    #form-group
-      label Body:
-      input.form-control(name='body', type='text')
-    input(type='submit' value='Submit')
+    h1 New Post
+    p Making a new post malone?
+    form(method='POST', action='/new')
+        #form-group
+            label Type:
+            select(name='type')
+                option(value='post', selected= true) Post
+                option(value='boast') Boast
+                option(value='roast') Roast
+        #form-group
+            label Author:
+            input.form-control(name='author', type='text', value='Anonymous')
+        #form-group
+            label Body:
+            input.form-control(name='body', type='text')
+        input(type='submit' value='Submit')

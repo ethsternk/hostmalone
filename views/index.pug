@@ -1,11 +1,10 @@
 extends layout
 
 block content
-  h1 Home
-  p Welcome to #{title}
-  p Here are some post malones
-  ul
-    each post, i in posts
-      li
-        p #{post.author} #{post.type}s: "#{post.body}"
-
+    h1 Home
+    p Welcome to #{title}
+    p Here are some post malones
+    ul
+        each post, i in posts
+            li
+                p #{post.author} #{post.type}s: "#{post.body}"

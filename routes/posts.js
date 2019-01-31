@@ -4,10 +4,16 @@ var router = express.Router();
 let Post = require('../models/post');
 
 router.get('/', function (req, res, next) {
-    res.render('new', { title: 'New Post Malone' })
+    Post.find({}, (err, posts) => {
+        if (err) {
+            console.log(err);
+        } else {
+            res.send(posts)
+        }
+    })
 });
 
-router.post('/', function (req, res, next) {
+router.post('/', (req, res) => {
     let post = new Post();
     post.type = req.body.type;
     post.body = req.body.body
@@ -18,7 +24,7 @@ router.post('/', function (req, res, next) {
             console.log(err);
             return;
         } else {
-            res.redirect('/');
+            res.send(post);
         }
     });
 })
